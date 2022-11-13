@@ -1,0 +1,158 @@
+.row_content {
+    width: 100%;
+    height: 100%;
+}
+
+.contact_form_1 {
+    width: 100%;
+    border-radius: 20px;
+    padding: 2rem;
+    background-color: rgb(252, 151, 151);
+}
+
+.ant_form_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ant_form_body {
+     padding-top: 0rem;
+}
+
+.ant_form_header_text {
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+.ant_form_header_icon {
+    padding-right: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.ant_form_input_label {
+    padding: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+    font-family: sans-serif;
+}
+
+.form_custom_input {
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: lighter;
+    font-family: sans-serif;
+}
+
+.form_custom_input:hover {
+    border-color: #f54c18;
+}
+
+.contact_container {
+    height: 100%;
+    width: 100%;
+}
+.contact_text {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+.contact_sub_text {
+    font-size: 1rem;
+    font-weight: lighter;
+    font-family: sans-serif;
+    text-align: center;
+}
+.contact_icon_text {
+    
+}
+
+.ant-form-item-required::before {
+    color: "#fcfcfc"
+}
+
+
+/* media query */
+@media only screen and (max-width: 600px) {
+    .contact_icon {
+       display: none;
+     }
+    
+    .contact_form {
+       width: 100%;
+       height: 100%;
+       padding: 1rem;
+       margin: 0rem
+    }
+   
+  
+}
+  
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {
+    .contact_icon {
+       display: none;
+     }
+    
+    .contact_form {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+        margin: 0rem
+    }
+  }
+  
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {
+    .contact_icon {
+        display: none;
+     }
+    
+    .contact_form {
+       width: 100%;
+       height: 100%;
+       padding: 1rem;
+       margin: 0rem
+    }
+  } 
+  
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {
+    .contact_icon {
+        display: none;
+     }
+    
+    .contact_form {
+       width: 100%;
+       height: 100%;
+       padding: 1rem;
+       margin: 0rem
+    }
+  } 
+  
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {
+    .contact_icon {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+     }
+    
+    .contact_form {
+       width: 50%;
+       height: 100%;
+       display: flex;
+       flex-direction: row;
+       justify-content: flex-end;
+    }
+  }
+  

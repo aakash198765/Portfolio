@@ -1,6 +1,6 @@
 import React from 'react';
 import { Alert, Breadcrumb, Menu, Drawer, Space, Button } from 'antd';
-import { AppstoreOutlined, ContainerOutlined, DesktopOutlined, MenuOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PieChartOutlined, MehOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, ContainerOutlined, DesktopOutlined, MenuOutlined, MenuFoldOutlined, MenuUnfoldOutlined, PieChartOutlined, MehOutlined, RocketOutlined } from '@ant-design/icons';
 import { HashRouter, Link, Route, Routes, useLocation } from 'react-router-dom';
 import "antd/dist/antd.css";
 import "./index.css";
@@ -26,7 +26,7 @@ class Content extends React.Component {
                     {
                         key: childIndex,
                         label: (
-                            <Link to={child.path}>{child.breadcrumbName}</Link>
+                            <Link onClick={() => this.props.callback("active", child.path)} to={child.path}><text className="custom_navbar_item_text" style={{color: this.props.active === child.path ? "#f54c18" : "#343a40" }}>{child.breadcrumbName}</text></Link>
                         ),
                       }
                 )
@@ -45,14 +45,14 @@ class Content extends React.Component {
             key = key && key[1];
             if(breadcrumbItem && breadcrumbItem.children && Array.isArray(breadcrumbItem.children) && breadcrumbItem.children.length){
                 navbar.push(
-                    <Breadcrumb.Item className="custom_navbar_item" key={key} overlay={this.renderBreadcrumbChildren(breadcrumbItem.children)}>
-                        <Link to={breadcrumbItem.path}><a>{breadcrumbItem.breadcrumbName}</a></Link>
+                    <Breadcrumb.Item className="custom_navbar_item" key={key} overlay={this.renderBreadcrumbChildren(breadcrumbItem.children)} >
+                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }}>{breadcrumbItem.breadcrumbName}</a></Link>
                     </Breadcrumb.Item>
                 )
             } else {
                 navbar.push(
-                    <Breadcrumb.Item className="custom_navbar_item" key={key}>
-                        <Link to={breadcrumbItem.path}><a>{breadcrumbItem.breadcrumbName}</a></Link>
+                    <Breadcrumb.Item className="custom_navbar_item" key={key} >
+                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
                     </Breadcrumb.Item>
                 )
             }
@@ -61,22 +61,27 @@ class Content extends React.Component {
         return (
             <div className="custom_navbar_component">
                 {/* Brand  */}
-                <text className="custom_brand_text">
-                    Portfolio
-                </text>
+                <div className='custom_brand_container'>
+                    <RocketOutlined style={{ fontSize: '2rem', color: '#f54c18', paddingLeft: '1.8rem', paddingRight: '.5rem' }} />
+                    <text className="custom_brand_text">Portfolio</text>
+                </div>
                 {/* Navbar  */}
-                <Breadcrumb className="custom_navbar" separator>
-                    {navbar}
-                </Breadcrumb>
+                <div className="custom_navbar_container">
+                    <Breadcrumb className="custom_navbar" separator> {navbar} </Breadcrumb>
+                </div>
+                 {/* Contact Me  */}
+                <div className="custom_contact_container">
+                    <Link to={"/contact"}><Button className="custom_contact_button"><text className='custom_contact_button_text'>Contact Me</text></Button></Link>
+                </div>
             </div>
         )
     }
 
     getItem = (label, key, icon, children, type) => {
         if(children && children.length){
-            return { key, icon, children, label:  <Link to={key}><a>{label}</a></Link>, type }
+            return { key, icon, children, label:  <Link to={key}><text className="custom_navbar_item_text" style={{color: this.props.active.includes(key) ? "#f54c18" : "#343a40" }}>{label}</text></Link>, type }
         } else {
-            return { key, icon, label:  <Link to={key}><a>{label}</a></Link>, type }
+            return { key, icon, label:  <Link to={key}><text className="custom_navbar_item_text" style={{color: this.props.active.includes(key) ? "#f54c18" : "#343a40" }}>{label}</text></Link>, type }
         }
     }
 
@@ -137,7 +142,7 @@ class Content extends React.Component {
                     visible={openDrawer}
                     extra={
                     <Space>
-                        <Button type="primary" style={{backgroundColor: "#343a40", borderColor: "#343a40", borderRadius: "5px"}} onClick={() => this.props.updateState('openDrawer', !openDrawer)}> Close </Button>
+                        <Button type="primary" style={{backgroundColor: "#f54c18", borderColor: "#f54c18", borderRadius: "5px"}} onClick={() => this.props.updateState('openDrawer', !openDrawer)}> Close </Button>
                     </Space>
                     }
                 >

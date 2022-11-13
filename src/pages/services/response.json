@@ -1,0 +1,19 @@
+{
+    "Services": [
+        {
+            "icon": "",
+            "title": "Web Service",
+            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
+        },
+        {
+            "icon": "",
+            "title": "Mongo Service",
+            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
+            },
+            {
+            "icon": "",
+            "title": "Mail Service",
+            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
+            }
+    ]
+}

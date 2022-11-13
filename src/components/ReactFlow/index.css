@@ -1,0 +1,6 @@
+.react-flow__node {
+    width: 0px !important;
+    border-style: none !important;
+    /*background-color: #e3e6e9 !important;*/
+    background-color: #fcfcfc;
+}

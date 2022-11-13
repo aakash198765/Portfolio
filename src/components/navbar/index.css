@@ -5,7 +5,7 @@
     height: 30px;
     margin-bottom: 16px;
     line-height: 30px;
-    background: #f8f8f8;
+    background-color: azure;
   }
   .demo-nav a {
     padding: 0 8px;
@@ -16,31 +16,71 @@
   }
 
 .custom_navbar_component {
-    background-color: #343a40;
-    height: 6rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
-    padding-top: 1.75rem;
-    padding-bottom: 1.5rem;
+    background-color: #e3e6e9;
+    height: 4rem;
+    display: block;
+}
+
+.custom_brand_container {
+  display: inline-block;
+  width: 20%;
 }
 
 .custom_brand_text {
-  font-size: 1.5rem;
-  font-family: cursive;
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.custom_contact_container {
+  display: inline-block;
+  width: 20%;
+}
+
+.custom_contact_button {
+  margin-left: 60%;
+  background-color: #e3e6e9;
+  border-width: 2px;
+  border-color: #f54c18;
+  height: 2.4rem;
+  padding-top: .2rem;
+  padding-bottom: .2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: .8rem;
+  font-family: sans-serif;
+}
+
+.custom_contact_button:hover {
+  background-color: #f54c18;
+  border-color: #f54c18;
+  color: #fff;
+}
+
+.custom_navbar_container {
+  display: inline-block;
+  width: 60%;
+  justify-content: center;
+  padding-left: 0%;
+  padding-right: 0%;
 }
 
 .custom_navbar {
-  float: right !important;
+  
 }
 
 .custom_navbar_item {
   margin-left: 3rem;
-  font-size: 1.3rem;
-  font-family: cursive;
+  font-family: sans-serif;
 }
 
-a:hover {
-  color: #6610f2 !important;
+.custom_navbar_item_text {
+  color: #000;
+  font-size: 1rem;
+}
+
+.custom_navbar_item_text:hover{
+  color: #f54c18;
 }
 
 .custom_breadcrumb_overlay_container {
@@ -60,7 +100,7 @@ a:hover {
 
 .custom_brand_text_2 {
   font-size: 2rem;
-  font-family: cursive;
+  font-family: sans-serif;
   color: #f7f8f8;
   margin-left: 1rem;
 }
@@ -73,6 +113,7 @@ a:hover {
   .mobile_drawer {
 
   }
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -83,6 +124,7 @@ a:hover {
   .mobile_drawer {
     display: none;
   }
+ 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
@@ -93,6 +135,7 @@ a:hover {
   .mobile_drawer {
     display: none;
   }
+
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */

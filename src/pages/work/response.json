@@ -1,0 +1,48 @@
+{
+    "Personal": [
+        {
+            "title": "Web Service",
+            "mode": "",
+            "modeText": ""
+        },
+        {
+            "title": "Mongo Service",
+            "mode": "",
+            "modeText": ""
+        },
+        {
+            "title": "Mail Service",
+            "mode": "",
+            "modeText": ""
+        }
+    ],
+    "Company": [
+        {
+            "title": "JSW",
+            "mode": "private",
+            "modeText": "You don't have access.."
+        },
+        {
+            "title": "Hindalco",
+            "mode": "private",
+            "modeText": "You don't have access.."
+        },
+        {
+            "title": "ITC",
+            "mode": "private",
+            "modeText": "You don't have access.."
+        }
+    ],
+    "Community": [
+        {
+            "title": "Expense Tracker",
+            "mode": "private",
+            "modeText": "You don't have access.."
+        },
+        { 
+            "title": "Student E-forum",
+            "mode": "private",
+            "modeText": "You don't have access.."
+        }
+    ]
+}

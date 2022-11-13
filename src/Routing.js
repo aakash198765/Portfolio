@@ -1,15 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import RouteList from './RouteList';
-import RouteNotFound from "./RouteNotFound";
-import Home from "./pages/home";
+
 
 class Routing extends React.Component {
 
     render(){
         return(
-            <Router
-            >
+            <Router>
                 <Routes>
                     {
                         Object.keys(RouteList).map((route) => {

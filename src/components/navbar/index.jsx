@@ -38,40 +38,34 @@ const breadcrumbItems = [
                 path: '/about?mode=education',
                 breadcrumbName: 'Education',
               },
-              {
-                path: '/about?mode=achievement',
-                breadcrumbName: 'Achievement',
-              },
-              {
-                path: '/about?mode=goal',
-                breadcrumbName: 'Goals',
-              },
-              {
-                path: '/about?mode=interest',
-                breadcrumbName: 'Interest',
-              },
-              {
-                path: '/about?mode=hobby',
-                breadcrumbName: 'Hobby',
-              },
+              // {
+              //   path: '/about?mode=achievement',
+              //   breadcrumbName: 'Achievement',
+              // },
+              // {
+              //   path: '/about?mode=goal',
+              //   breadcrumbName: 'Goals',
+              // },
+              // {
+              //   path: '/about?mode=interest',
+              //   breadcrumbName: 'Interest',
+              // },
+              // {
+              //   path: '/about?mode=hobby',
+              //   breadcrumbName: 'Hobby',
+              // },
         ],
     },
-    {
-        breadcrumbName: "Portfolio",
-        breadcrumbIcon: "",
-        path: "/portfolio",
-        children: [],
-    },
+    // {
+    //     breadcrumbName: "Portfolio",
+    //     breadcrumbIcon: "",
+    //     path: "/portfolio",
+    //     children: [],
+    // },
     {
         breadcrumbName: "Services",
         breadcrumbIcon: "",
         path: "/service",
-        children: [],
-    },
-    {
-        breadcrumbName: "Contact Me",
-        breadcrumbIcon: "",
-        path: "/contact",
         children: [],
     }
 ];
@@ -82,7 +76,7 @@ class NavBar extends React.Component {
         this.state = {
             openDrawer: false,
             collapsed: false,
-            breadcrumbItems: []
+            breadcrumbItems: [],
         }
     }
 
@@ -105,6 +99,8 @@ class NavBar extends React.Component {
               breadcrumbItems={breadcrumbItems} 
               state={this.state}
               updateState={this.updateState}
+              active={this.props.active}
+              callback={this.props.callback}
             />
         )
     }
