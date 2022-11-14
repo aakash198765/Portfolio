@@ -1,5 +1,4 @@
 import React from 'react'
-import Lottie from 'react-lottie';
 import * as animationData from './pinjump.json'
 import * as messageSent from './message_sent.json'
  
@@ -24,11 +23,11 @@ export default class Animation extends React.Component {
   render() { 
     return(
     <div>
-        <Lottie 
+        {/* <Lottie 
             options={this.getDefaultOptions()}
             height={500}
             width={500}
-        />
+        /> */}
     </div>
     )
   }
