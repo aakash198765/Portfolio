@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Form, Input, InputNumber, Select, Row, Col,  } from 'antd';
 import { SendOutlined, SaveTwoTone  } from '@ant-design/icons';
-import Animation from '../../components/Animation';
 import './index.css'
 const { Option } = Select;
 
@@ -118,7 +117,6 @@ class Content extends React.Component {
             <div className="contact_container">
                 <div className="contact_text">Get in touch!</div>
                 <div className="contact_sub_text">Contact us for a quote, help to join the team.</div>
-                <div className="contact_icon_text"><Animation /></div>
             </div>
         )
     }
