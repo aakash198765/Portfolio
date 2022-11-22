@@ -81,10 +81,6 @@ class Content extends React.Component {
     }
 
     getMediaIcon = (media) => {
-        const onClickIcon = (e, media) => {
-            console.log(media);
-
-        } 
         media = media && media.toLowerCase();
         switch(media) {
             case "linkedin" : return <a className='media_icon_link' href=''><LinkedinOutlined className='icon_style'/></a>;
@@ -110,15 +106,15 @@ class Content extends React.Component {
         return UI;
     }
 
-    renderLeftPanel = () => {
+    renderContent = () => {
         const { response } = this.props.state;
         return (
             <div className='left_panel'> 
                 <div>
                     <div  className='title'>{this.getTitle( response && response.Title)}</div>
-                    <div className='content'>{this.getContent(response && response.Content)}</div>
+                    <div className='content_text'>{this.getContent(response && response.Content)}</div>
                     <div className='actions'>{this.getAction(response && response.Actions)}</div>
-                    <div  className='role'>{this.getRole(response && response.Role)}</div>
+                    <div  className='role_text'>{this.getRole(response && response.Role)}</div>
                 </div>
                 <div>
                     <div  className='quote'>{response && response.Quote}</div>
@@ -127,41 +123,44 @@ class Content extends React.Component {
         )
     }
 
-    renderRightPanel = () => {
+    renderProfileImage = () => {
         const { response } = this.props.state;
         return (
-            <div className='right_panel'>
-                <div className='profile_image'>
-                    <Image
-                        preview={false}
-                        width="100%"
-                        height="100%"
-                        src={response && response.Profile && response.Profile.length ? response.Profile : require("../../assests/images/profile.png")}
-                    />
-                </div>
-            </div>
-        )
+                <Image
+                    preview={false}
+                    width="100%"
+                    height="100%"
+                    src={response && response.Profile && response.Profile.length ? response.Profile : require("../../assests/images/profile.png")}
+                />
+            )
     }
 
     renderMediaIcon = () => {
         const { response } = this.props.state;
         return (
-            <div  className='medias'>{this.getMedias(response && response.Medias)}</div>
+            <div  className='media_icons'>{this.getMedias(response && response.Medias)}</div>
         )
     }
 
     render(){
         return (
-            <Row gutter={[0, 0]} className="row_content">
-                <Col span={15}>{this.renderLeftPanel()}</Col>
-                <Col span={8}>{this.renderRightPanel()}</Col>
-                <Col span={1}>{this.renderMediaIcon()}</Col>
-                {/* <Document file="./AakashKumar.pdf" onLoadSuccess={() => {}}>
-                    <Page pageNumber={1} />
-                </Document> */}
-            </Row>
+            <>
+              {/* Web Content */}
+              <div className='content_container_web'>
+                <div className='content_web'>{this.renderContent()}</div>
+                <div className='profile_image_web'>{this.renderProfileImage()}</div>
+                <div className='media_icons_set'>{this.renderMediaIcon()}</div>
+              </div>
+
+               {/* Mobile Content */}
+               <div className='content_container_mobile'>
+                    <div className='profile_image_mobile'>{this.renderProfileImage()}</div>
+                    <div className='content_mobile'>{this.renderContent()}</div>
+                    <div className='media_icons_set'>{this.renderMediaIcon()}</div>
+              </div>
+            </>
         )
     }
-}
+} 
 
 export default Content;
