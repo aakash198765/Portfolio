@@ -57,21 +57,17 @@ class Content extends React.Component {
                 )
             }
         }
-
-        return (
+ 
+        return ( 
             <div className="custom_navbar_component">
                 {/* Brand  */}
                 <div className='custom_brand_container'>
                     <RocketOutlined style={{ fontSize: '2rem', color: '#f54c18', paddingLeft: '1.8rem', paddingRight: '.5rem' }} />
                     <text className="custom_brand_text">Portfolio</text>
-                </div>
+                </div> 
                 {/* Navbar  */}
                 <div className="custom_navbar_container">
                     <Breadcrumb className="custom_navbar" separator> {navbar} </Breadcrumb>
-                </div>
-                 {/* Contact Me  */}
-                <div className="custom_contact_container">
-                    <Link to={"/contact"}><Button className="custom_contact_button"><text className='custom_contact_button_text'>Contact Me</text></Button></Link>
                 </div>
             </div>
         )

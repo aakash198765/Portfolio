@@ -33,7 +33,7 @@ class Content extends React.Component {
         }
         let UI = [];
         UI.push(
-            <Link to="/contact"><Button className="action"><text className='action_text'>{'Hire Me'}</text></Button></Link>
+            <Button className="action"><text className='action_text'>{'Hire Me'}</text></Button>
         )
         UI.push(
             <Button className="action" onClick={() => {}}><text className='action_text'>{'Download CV'}</text></Button>
@@ -133,6 +133,7 @@ class Content extends React.Component {
             <div className='right_panel'>
                 <div className='profile_image'>
                     <Image
+                        preview={false}
                         width="100%"
                         height="100%"
                         src={response && response.Profile && response.Profile.length ? response.Profile : require("../../assests/images/profile.png")}
@@ -155,9 +156,9 @@ class Content extends React.Component {
                 <Col span={15}>{this.renderLeftPanel()}</Col>
                 <Col span={8}>{this.renderRightPanel()}</Col>
                 <Col span={1}>{this.renderMediaIcon()}</Col>
-                <Document file="./AakashKumar.pdf" onLoadSuccess={() => {}}>
+                {/* <Document file="./AakashKumar.pdf" onLoadSuccess={() => {}}>
                     <Page pageNumber={1} />
-                </Document>
+                </Document> */}
             </Row>
         )
     }
