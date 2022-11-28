@@ -11,7 +11,7 @@ class Work extends React.Component {
 
         this.state = {
             active: ""
-        }
+        } 
     }
 
     componentDidMount() {

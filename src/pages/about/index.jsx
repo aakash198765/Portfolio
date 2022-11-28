@@ -11,21 +11,35 @@ class About extends React.Component {
         this.state = {
             active: ""
         }
+
+        this.searchParams = new URLSearchParams(window.location.search)
     }
 
     componentDidMount() {
-        const location = window.location;
+        const mode = this.getParams("mode", window.location.search);
         this.setState({
-            active: `${location.pathname}${location.search}`,
+            active: mode,
         })
+    } 
+
+    getParams = (param, url) => {
+        let params = url ? url.split("?") : "";
+        params = params && params[1] ? params[1].split("&") : [];
+        let obj = {};
+        for(let i in params) {
+            let param = params[i].split("=");
+            obj[param[0]] = param[1];
+        }
+        return obj[param] || "";
     }
 
     callback = (id, value) => {
         if(!id || !id.length){
             return ;
         }
+        const mode = this.getParams("mode", value);
         this.setState({
-          [id]: value
+          active: mode
         })
       }
 
@@ -33,9 +47,9 @@ class About extends React.Component {
         const { active } = this.state;
         return (
             <div className='page_layout'>
-            <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
-            <div className='page_content'><Content /></div>
-        </div>
+                <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
+                <div className='page_content'><Content active={active} /></div>
+            </div>
         )
     }
 }

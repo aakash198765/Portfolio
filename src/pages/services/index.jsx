@@ -11,6 +11,7 @@ class Service extends React.Component {
 
         this.state = {
             active: "",
+            width: 200,
             collapsed: false,
             activeService: 0,
             response: {},

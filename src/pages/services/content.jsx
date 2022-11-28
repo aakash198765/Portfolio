@@ -35,7 +35,65 @@ class ServiceContent extends React.Component {
         return items;
     }
 
-    getMenuItemContent = (response, activeService) => {
+    render(){
+        return (
+            <div className='service_content_container'>{this.renderMainContent(this.props.state)}</div>
+        )
+    }
+
+    renderMainContent = (state) => {
+        const { collapsed, response, activeService, width } = state;
+        return (
+            <Layout className='service_content_container'>
+                <Sider 
+                    trigger={null} 
+                    collapsible 
+                    collapsed={collapsed} 
+                    width={width} 
+                    theme="light"
+                >
+                    <Menu
+                        theme="light"
+                        mode="inline"
+                        width={width} 
+                        defaultSelectedKeys={['1']}
+                        items={this.getMenuItems(response)}
+                        onClick={(event) => this.props.callback("activeService", event.key)}
+                    />
+                </Sider>
+                <Layout className="site-layout">
+                    <Header
+                        className="site-layout-background"
+                        style={{
+                            padding: 0,
+                            paddingLeft: 20,
+                            fontSize: "1.2rem",
+                        }}
+                    >
+                        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                            className: 'trigger',
+                            onClick: () => {
+                                this.props.callback("width", width === 200 ? 10 : 200)
+                                this.props.callback("collapsed", !collapsed)
+                            },
+                        })}
+                    </Header>
+                    <Content
+                        className="site-layout-background"
+                        style={{
+                            margin: '24px 16px',
+                            padding: 24,
+                            minHeight: 280,
+                        }}
+                    >
+                        {this.renderMenuItemContent(response, activeService)}
+                    </Content>
+                </Layout>
+            </Layout>
+        )
+    }
+
+    renderMenuItemContent = (response, activeService) => {
         if(!response || !response.Services || !response.Services[activeService]){
             return <div>No Content</div>;
         }
@@ -61,54 +119,6 @@ class ServiceContent extends React.Component {
                     {service && service.content}
                 </div>
             </>
-        )
-    }
-
-    getContent = (state) => {
-        const { collapsed, response, activeService } = state;
-        return (
-            <Layout className='service_content_container'>
-                <Sider trigger={null} collapsible collapsed={collapsed} width={300} >
-                    <Menu
-                        theme="dark"
-                        mode="inline"
-                        defaultSelectedKeys={['1']}
-                        items={this.getMenuItems(response)}
-                        onClick={(event) => this.props.callback("activeService", event.key)}
-                    />
-                </Sider>
-                <Layout className="site-layout">
-                    <Header
-                        className="site-layout-background"
-                        style={{
-                            padding: 0,
-                            paddingLeft: 20,
-                            fontSize: "1.2rem",
-                        }}
-                    >
-                        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                            className: 'trigger',
-                            onClick: () => this.props.callback("collapsed", !collapsed),
-                        })}
-                    </Header>
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            margin: '24px 16px',
-                            padding: 24,
-                            minHeight: 280,
-                        }}
-                    >
-                        {this.getMenuItemContent(response, activeService)}
-                    </Content>
-                </Layout>
-            </Layout>
-        )
-    }
-
-    render(){
-        return (
-            <div className='service_content_container'>{this.getContent(this.props.state)}</div>
         )
     }
 }

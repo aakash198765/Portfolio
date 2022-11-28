@@ -11,6 +11,33 @@ const breadcrumbItems = [
         children: [],
     },
     {
+      breadcrumbName: "About",
+      breadcrumbIcon: "",
+      path: "/about",
+      children: [
+           {
+              path: '/about?mode=education',
+              breadcrumbName: 'Education',
+            },
+            {
+              path: '/about?mode=experience',
+              breadcrumbName: 'Experience',
+            },
+            // {
+            //   path: '/about?mode=goal',
+            //   breadcrumbName: 'Goals',
+            // },
+            // {
+            //   path: '/about?mode=interest',
+            //   breadcrumbName: 'Interest',
+            // },
+            // {
+            //   path: '/about?mode=hobby',
+            //   breadcrumbName: 'Hobby',
+            // },
+      ],
+  },
+    {
         breadcrumbName: "Works",
         breadcrumbIcon: "",
         path: "/work",
@@ -29,33 +56,6 @@ const breadcrumbItems = [
             },
           ],
     },
-    {
-        breadcrumbName: "About",
-        breadcrumbIcon: "",
-        path: "/about",
-        children: [
-            {
-                path: '/about?mode=education',
-                breadcrumbName: 'Education',
-              },
-              // {
-              //   path: '/about?mode=achievement',
-              //   breadcrumbName: 'Achievement',
-              // },
-              // {
-              //   path: '/about?mode=goal',
-              //   breadcrumbName: 'Goals',
-              // },
-              // {
-              //   path: '/about?mode=interest',
-              //   breadcrumbName: 'Interest',
-              // },
-              // {
-              //   path: '/about?mode=hobby',
-              //   breadcrumbName: 'Hobby',
-              // },
-        ],
-    },
     // {
     //     breadcrumbName: "Portfolio",
     //     breadcrumbIcon: "",
@@ -67,7 +67,13 @@ const breadcrumbItems = [
         breadcrumbIcon: "",
         path: "/service",
         children: [],
-    }
+    },
+    {
+      breadcrumbName: "Contact",
+      breadcrumbIcon: "",
+      path: "/contact",
+      children: [],
+  }
 ];
 
 class NavBar extends React.Component {

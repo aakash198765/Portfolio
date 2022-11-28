@@ -24,12 +24,6 @@
  
 }
 
-.custom_brand_text {
-  font-size: 2rem;
-  font-weight: bold;
-  font-family: sans-serif;
-}
-
 .custom_navbar_container {
   display: inline-flex;
   justify-content: center;
@@ -38,14 +32,6 @@
 
 .custom_navbar {
   
-}
-
-.custom_navbar_item_text {
-  color: #000;
-  font-family: sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  font-variant: all-small-caps;
 }
 
 .custom_navbar_item_text:hover{
@@ -88,6 +74,21 @@
     font-family: sans-serif;
   }
 
+  .custom_navbar_item_last {
+    margin: 0rem;
+    font-family: sans-serif;
+    padding: .5rem .5rem .5rem .5rem;
+    background-color: rgba(252, 105, 60, 0.96);
+    border-radius: 5rem;
+  }
+
+  .custom_brand_text {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+  
+
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -103,6 +104,29 @@
     margin-left: 0rem;
     font-family: sans-serif;
   }
+
+  .custom_navbar_item_last {
+    margin: 0rem;
+    font-family: sans-serif;
+    padding: .5rem .5rem .5rem .5rem;
+    background-color: rgba(252, 105, 60, 0.96);
+    border-radius: 5rem;
+  }
+
+  .custom_brand_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .custom_navbar_item_text {
+    color: #000;
+    font-family: sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    font-variant: all-small-caps;
+  }
+  
  
 }
 
@@ -120,6 +144,28 @@
     font-family: sans-serif;
   }
 
+  .custom_navbar_item_last {
+    font-family: sans-serif;
+    padding: .8rem 1rem .8rem 1rem;
+    background-color: rgba(252, 105, 60, 0.96);
+    border-radius: 5rem;
+  }
+
+  .custom_brand_text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .custom_navbar_item_text {
+    color: #000;
+    font-family: sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+    font-variant: all-small-caps;
+  }
+  
+
 } 
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -135,6 +181,28 @@
     margin-left: 3rem;
     font-family: sans-serif;
   }
+
+  .custom_navbar_item_last {
+    font-family: sans-serif;
+    padding: .8rem 1rem .8rem 1rem;
+    background-color: rgba(252, 105, 60, 0.96);
+    border-radius: 5rem;
+  }
+
+  .custom_brand_text {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .custom_navbar_item_text {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant: all-small-caps;
+  }
+  
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -150,4 +218,27 @@
     margin-left: 3rem;
     font-family: sans-serif;
   }
+
+  .custom_navbar_item_last {
+    font-family: sans-serif;
+    padding: .8rem 1rem .8rem 1rem;
+    background-color: rgba(252, 105, 60, 0.96);
+    border-radius: 5rem;
+  }
+
+  .custom_brand_text {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: sans-serif;
+  }
+
+  .custom_navbar_item_text {
+    color: #000;
+    font-family: sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    font-variant: all-small-caps;
+  }
+  
+  
 }

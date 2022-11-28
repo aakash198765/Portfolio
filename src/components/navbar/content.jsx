@@ -39,6 +39,7 @@ class Content extends React.Component {
 
     renderBreadcrumb = (breadcrumbItems) => {
         let navbar = [];
+        let len = breadcrumbItems.length;
         for(let index in breadcrumbItems) {
             const breadcrumbItem = breadcrumbItems[index];
             let key = breadcrumbItem.path && breadcrumbItem.path.split('/');
@@ -50,16 +51,24 @@ class Content extends React.Component {
                     </Breadcrumb.Item>
                 )
             } else {
-                navbar.push(
-                    <Breadcrumb.Item className="custom_navbar_item" key={key} >
-                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
-                    </Breadcrumb.Item>
-                )
+                if(parseInt(index) === len - 1) {
+                    navbar.push(
+                        <Breadcrumb.Item className="custom_navbar_item" key={key} >
+                            <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
+                        </Breadcrumb.Item>
+                    )
+                } else {
+                    navbar.push(
+                        <Breadcrumb.Item className="custom_navbar_item" key={key} >
+                            <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
+                        </Breadcrumb.Item>
+                    )
+                }
             }
         }
  
         return ( 
-            <div className="custom_navbar_component">
+            <div className="custom_navbar_component"> 
                 {/* Brand  */}
                 <div className='custom_brand_container'>
                     <RocketOutlined style={{ fontSize: '2rem', color: '#f54c18', paddingLeft: '1.8rem', paddingRight: '.5rem' }} />
