@@ -1,17 +1,13 @@
-import React from 'react';
-import { Button, Form, Input, InputNumber, Select, Row, Col,  } from 'antd';
-import { SendOutlined, SaveTwoTone  } from '@ant-design/icons';
 import './index.css'
+import React from 'react';
+import { Button, Form, Input, InputNumber, Select, Row, Col, Image, Spin  } from 'antd';
+import { DownloadOutlined, SendOutlined, PhoneOutlined,  UserOutlined, QuestionCircleOutlined } from '@ant-design/icons';
+import Lottie from "lottie-react";
+import Sending from './send.json';
+import Sent from './sent.json';
+import Failed from './failed.json';
+const { TextArea } = Input;
 const { Option } = Select;
-
-const layout = {
-    labelCol: {
-      span: 8,
-    },
-    wrapperCol: {
-      span: 16,
-    },
-};
 
 class Content extends React.Component {
     constructor(props){
@@ -22,111 +18,195 @@ class Content extends React.Component {
         }
     }
 
-    getPrefixSelector = () => {
-        return (
-            <Form.Item name="prefix" noStyle>
-              <Select
-                style={{
-                  width: 200,
-                }}
-              >
-                <Option value="86">+86</Option>
-                <Option value="87">+87</Option>
-              </Select>
-            </Form.Item>
-          );
+    render(){
+        return this.renderMainContent();
     }
 
-    getContactForm = () => {
+    renderMainContent = () => {
         return (
-            <Form layout="vertical" name="nest-messages" onFinish={()=>{}} validateMessages={()=>{}} className="contact_form_1">
-                <div className='ant_form_header'><span className="ant_form_header_text"></span><span className="ant_form_header_icon"><SendOutlined twoToneColor="#f54c18" type="primary" htmlType="submit" /></span></div>
-                <div className='ant_form_body'>
-                    <Form.Item
-                        className='ant_form_input_label'
-                        name={['user', 'name']}
-                        label="Your Name"
-                        rules={[
-                            {
-                                required: true,
-                            },
-                        ]}
-                    >
-                        <Input className='form_custom_input' />
-                    </Form.Item>
-                    <Form.Item
-                        className='ant_form_input_label'
-                        name={['user', 'email']}
-                        label="Mail"
-                        rules={[
-                            {
-                                type: 'email',
-                                required: true,
-                            },
-                        ]}
-                    >
-                        <Input className='form_custom_input' />
-                    </Form.Item>
-                    <Form.Item
-                        className='ant_form_input_label'
-                        name="phone"
-                        label="Phone Number"
-                        rules={[
-                            {
-                                required: true,
-                                message: 'Please input your phone number!',
-                            },
-                        ]}
-                    >
-                        <Input
-                            className='form_custom_input'
-                            //addonBefore={this.getPrefixSelector}
-                        />
-                    </Form.Item>
-                    <Form.Item 
-                        className='ant_form_input_label'
-                        name={['user', 'website']} 
-                        label="Services"
-                        rules={[
-                            {
-                                required: true,
-                            }
-                        ]}
-                    >
-                        <Input className='form_custom_input' />
-                    </Form.Item>
-                    <Form.Item 
-                        className='ant_form_input_label'
-                        name={['user', 'introduction']} 
-                        label="Message"
-                        rules={[
-                            {
-                                required: true,
-                            }
-                        ]}
-                    >
-                        <Input.TextArea className='form_custom_input' />
-                    </Form.Item>
-                 </div>
-            </Form>
-        )
-    }
-
-    getContactIcon = () => {
-        return (
-            <div className="contact_container">
-                <div className="contact_text">Get in touch!</div>
-                <div className="contact_sub_text">Contact us for a quote, help to join the team.</div>
+            <div className='contact-content'>
+                {/*Header*/}
+                <div className='contact-content-header'>
+                    {this.renderHeader()}
+                </div> 
+                {/* Horizontal gutter */}
+                <div className='horizontal-gutter-1' />
+                {/*Body*/}
+                <div className='contact-content-body'>
+                    {this.renderBody()}
+                </div>
             </div>
         )
     }
 
-    render(){
+    renderHeader = () => {
         return (
-            <Row gutter={[0, 0]} className="row_content">
-                <Col className="contact_icon">{this.getContactIcon()}</Col>
-                <Col className="contact_form">{this.getContactForm()}</Col>
+            <>  
+                <div className="header-text">Get in touch!</div>
+                <div className="header-subText">Contact us for a quote, help to join the team.</div>
+            </>
+        )
+    }
+
+    renderBody = () => {
+        return (
+            <Row>
+                <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+                    <div className='body-mail'>{this.renderMail()}</div>
+                </Col>
+                <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+                    <div className='body-form'>{this.renderForm()}</div>
+                </Col>
             </Row>
+        )
+    }
+
+    renderMail = () => {
+        return (
+                <Image
+                    preview={false}
+                    style={{width: '30rem', height: '30rem', borderRadius: '.5rem'}}
+                    src={"https://cdn3d.iconscout.com/3d/premium/thumb/send-mail-5590581-4652624.png"}
+                />
+        )
+    }
+
+    renderForm = () => {
+        const { state } = this.props;
+        const { form, submitCounter, sendingMessage, sentMessageSuccessfully, failedToSendMessage} = state;
+        
+        if(sendingMessage) {
+            return this.renderLoader();
+        }
+
+        if(sentMessageSuccessfully) {
+            return this.renderSuccessfull()
+        }
+
+        if(failedToSendMessage) {
+            return this.renderFailure()
+        }
+
+        return (
+          <div className='contactForm'>
+            <Input 
+                size="large" 
+                className='inputStyle'
+                id="firstName"
+                placeholder="First Name"
+                defaultValue={form.firstName}
+                onChange={(e) => this.props.updateForm('firstName', e.target.value)}
+                suffix={submitCounter && !form.firstName ? <QuestionCircleOutlined style={{color: 'red'}} /> : <></>}
+            />
+            <div className='horizontal-gutter' />
+            <Input 
+                size="large" 
+                className='inputStyle'
+                id="lastName"
+                placeholder="Last Name"
+                defaultValue={form.lastName}
+                onChange={(e) => this.props.updateForm('lastName', e.target.value)}
+                suffix={submitCounter && !form.lastName ? <QuestionCircleOutlined style={{color: 'red'}} /> : <></>}
+            />
+            <div className='horizontal-gutter' />
+            <Input 
+                size="large" 
+                className='inputStyle'
+                id="emailID"
+                prefix={<UserOutlined style={{marginRight: '.3rem'}} />}
+                suffix={submitCounter && !form.emailID ? <QuestionCircleOutlined style={{color: 'red'}} /> : <></>}
+                placeholder="What's your email?"
+                defaultValue={form.emailID}
+                onChange={(e) => this.props.updateForm('emailID', e.target.value)}
+            />
+            <div className='horizontal-gutter' />
+            <Input 
+                size="large" 
+                className='inputStyle'
+                id="phoneNumber"
+                prefix={<PhoneOutlined style={{marginRight: '.3rem'}} rotate={90} />}
+                suffix={submitCounter && !form.phoneNumber ? <QuestionCircleOutlined style={{color: 'red'}} /> : <></>}
+                placeholder="What's your Phone Number"
+                defaultValue={form.phoneNumber}
+                onChange={(e) => this.props.updateForm('phoneNumber', e.target.value)}
+            />
+            <div className='horizontal-gutter' />
+             <TextArea
+                id="message"
+                className={submitCounter && !form.message ? 'textAreaStyle textAreaStyleError' : 'textAreaStyle'}
+                placeholder="Your questions..."
+                defaultValue={form.message}
+                onChange={(e) => this.props.updateForm('message', e.target.value)}
+                maxLength={200}
+                autoSize={{
+                    minRows: 3,
+                    maxRows: 6,
+                }}
+            />
+            <div className='horizontal-gutter' />
+            <Button
+                id="sendMessage" 
+                className='sendMessage'
+                type="primary" 
+                shape="round" 
+                //icon={<SendOutlined />} 
+                size={'large'}
+                onClick={(e) => this.props.sendMessage(e)}
+            >
+                SEND MESSAGE
+            </Button>
+          </div>
+        )
+    }
+
+    renderLoader = () => {
+        return (
+            <div className='loader'>
+                <Lottie className='loader-anime' animationData={Sending} loop={true} />
+                <span className='loader-message'>Sending Message . . .</span>
+            </div>
+        )
+    }
+
+    renderSuccessfull = () => {
+        return (
+            <div className='loader'>
+                <Lottie className='loader-anime' animationData={Sent} loop={true} />
+                <span className='loader-message'>
+                    Successfully Sent Message. 
+                    <a 
+                        href='' 
+                        className='send-new-link' 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            this.props.sendNewMessage();
+                        }}
+                    >
+                        Send New Message
+                    </a>
+                </span>
+            </div>
+        )
+    }
+
+    renderFailure = () => {
+        return (
+            <div className='loader'>
+                <Lottie className='loader-anime' animationData={Failed} loop={true} />
+                <span className='loader-message'>
+                    Failed to Send Message. 
+                    <a 
+                        href='' 
+                        className='retry-link' 
+                        onClick={(e) => {
+                            e.preventDefault();
+                            this.props.retry();
+                        }}
+                    >
+                        Retry
+                    </a>
+                </span>
+            </div>
         )
     }
 }
