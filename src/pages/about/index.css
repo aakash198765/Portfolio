@@ -33,26 +33,29 @@
     align-items: center;
   }
 
-  .education-header-title1 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    font-variant: tabular-nums;
+  .education-header-title {
+    font-family: cursive;
     font-size: 1rem;
-    line-height: 1.5715;
-    background-color: #fff;
-    font-feature-settings: 'tnum', "tnum";
+    line-height: inherit;
     overflow: auto;
     margin-top: .5rem;
+    font-weight: 500;
   }
 
-  .education-header-title2 {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-    font-variant: tabular-nums;
-    font-size: .8rem;
-    line-height: 1.5715;
-    background-color: #fff;
-    font-feature-settings: 'tnum', "tnum";
+  .education-header-subTitle {
+    font-family: cursive;
+    font-size: 1rem;
+    line-height: inherit;
     overflow: auto;
-    margin-bottom: 0rem;
+    margin-bottom: .2rem;
+  }
+
+  .education-header-date {
+    font-family: cursive;
+    font-size: .7rem;
+    line-height: inherit;
+    overflow: auto;
+    margin-bottom: .2rem;
   }
 
   .education-header-image {
@@ -74,22 +77,118 @@
     margin-top: 1rem;
   }
   
-  .education-footer {
+.education-footer {
     height: 16rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
+}
   
-  .education-footer-button {
-    width: 70%;
+.education-footer-button-1 {
+    width: 70% !important;
+    height: 3rem !important;
+    background-color: #cacaff;
+    border-color: #cacaff;
+    border-style: none;
+    border-width: 0rem;
+    font-family: inherit;
+    font-variant-caps: petite-caps;
+    font-size: 1rem;
+    line-height: inherit;
+    color: #ffffff;
+    /* background: linear-gradient(90deg, #cacaff, #cacaff); */
+}
 
-  }
+.education-footer-button-1:hover {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:focus {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:focus-within {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:focus-visible {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:target {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:visited {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
+.education-footer-button-1:active {
+    background-color: #a7a7ef !important;
+    border-color: #bcbced;
+    color: #5a5479;
+}
 
-  .printDoc {
+.education-footer-button-2 {
+  width: 70% !important;
+  height: 3rem !important;
+  background-color: #8887ff;
+  border-color: #8887ff;
+  border-style: none;
+  border-width: 0rem;
+  font-family: inherit;
+  font-variant-caps: petite-caps;
+  font-size: 1rem;
+  line-height: inherit;
+  color: #ffffff;
+  /* background: linear-gradient(320deg, #8887ff, #8887ff); */
+}
+
+.education-footer-button-2:hover {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:focus {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:focus-within {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:focus-visible {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:target {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:visited {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+.education-footer-button-2:active {
+  background-color: #7a7adf !important;
+  border-color: #8887ff;
+  color: #5a5479;
+}
+
+.printDoc {
     height: 100vh;
     width: 100vw;
-
-  }
+}
   

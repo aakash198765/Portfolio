@@ -63,6 +63,12 @@
     padding: 0rem 0rem 1rem 0rem;
 }
 
+.ant-input-affix-wrapper > input.ant-input {
+    padding: 0rem 0.5rem 0rem 0.5rem !important;
+    border: none;
+    outline: none;
+}
+
 .inputStyle {
     border-radius: 2rem !important;
     padding: .8rem 1.5rem .8rem 1.5rem !important;
@@ -109,6 +115,7 @@
     font-family: cursive;
     font-size: 1rem;
     line-height: inherit;
+    background: linear-gradient(90deg, #8887ff, #cacaff);
 }
 .sendMessage:hover {
     background-color: #cacaff !important;
