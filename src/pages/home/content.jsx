@@ -4,6 +4,8 @@ import { CloseOutlined, LinkedinOutlined, InstagramOutlined, FacebookOutlined, W
 import './index.css'
 import { HashRouter, Link, Route, Routes, useLocation } from 'react-router-dom';
 import { Document, Page } from 'react-pdf';
+import Lottie from "lottie-react";
+import Setting from './setting.json';
 
 class Content extends React.Component {
     constructor(props){
@@ -69,13 +71,9 @@ class Content extends React.Component {
         return (
             <Row gutter={[0, 0]}>
                 <Col span={6} className="role_icon">
-                    {/* <CloseOutlined twoToneColor="#f54c18" /> */}
-                    <img
-                        width={50}
-                        src={require("../../assests/images/role_icon.png")}
-                    />
+                     <Lottie className='role-anime' animationData={Setting} loop={true} />
                 </Col>
-                <Col span={18}>{Role}</Col>
+                <Col span={18} className="role-anime-text"><span>{Role}</span></Col>
             </Row>
         )
     }
@@ -130,7 +128,8 @@ class Content extends React.Component {
                     preview={false}
                     width="100%"
                     height="100%"
-                    src={response && response.Profile && response.Profile.length ? response.Profile : require("../../assests/images/profile.png")}
+                    src="https://sivabalan.engineer/img/others/home-right.png"
+                    //src={response && response.Profile && response.Profile.length ? response.Profile : require("../../assests/images/profile.png")}
                 />
             )
     }
