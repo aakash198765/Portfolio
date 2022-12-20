@@ -1,0 +1,133 @@
+{
+    "stacks": [
+        {
+           "name":"Frontend",
+           "desc": "Frontend"
+        },
+        {
+           "name":"Backend",
+           "desc":"Backend"
+        },
+        {
+           "name":"DevOps",
+           "desc":"DevOps"
+        }
+     ],
+    "certificates": {
+        "Frontend": [
+           {
+              "_id":1,
+              "certificate":"HTML",
+              "certificateDesc": "Hyper Text Markup Language.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://adriancs.com/wp-content/uploads/2022/09/html.png",
+              "summary": ""
+           },
+           {  
+              "_id":2,
+              "certificate":"CSS",
+              "certificateDesc": "Cascading Style Sheets.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://res.cloudinary.com/hilnmyskv/image/upload/q_auto,f_auto/v1669659911/Algolia_com_Blog_assets/Featured_images/engineering/simplifying-tailwind-css-with-eslint-tools-tagged-template-literals-and-a-lot-more/qwydbm5bw9bv11zq7rvr.png",
+              "summary": ""
+           },
+           {
+              "_id":3,
+              "certificate":"BootStrap",
+              "certificateDesc": "The most popular HTML, CSS, and JavaScript framework.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://cyberlancers.com/images/default-source/blog/bootstrap-logo.png?sfvrsn=106f9c97_1",
+              "summary": ""
+           },
+           {
+              "_id":4,
+              "certificate":"ReactJS",
+              "certificateDesc": "ReactJS is a declarative, efficient, and flexible JavaScript library.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://miro.medium.com/max/1400/1*FGFRP0QNXfTCOfGl3cRTDg.png",
+              "summary": ""
+           },
+           {
+              "_id":5,
+              "certificate":"React Native",
+              "certificateDesc": "Cross-Mobile Platform App Development.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://miro.medium.com/max/700/1*C3kxjCrJy-aWSMpe2chfaA.png",
+              "summary": ""
+           },
+           {
+              "_id":6,
+              "certificate":"JavaScript",
+              "certificateDesc": "JavaScript is a lightweight, interpreted programming language.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+              "summary": ""
+           },
+           {
+              "_id":7,
+              "certificate":"ECMA Script",
+              "certificateDesc": "ECMAScript is a scripting language specification on which JavaScript is based.",
+              "stack": "Frontend",
+              "stackDesc": "Frontend",
+              "image":"https://www.parthenonsoftware.com/collectedstatic/img/logos/es6.png",
+              "summary": ""
+           }
+        ],
+        "Backend": [
+           {
+              "_id": 8,
+              "certificate":"JavaScript",
+              "certificateDesc": "JavaScript is a lightweight, interpreted programming language.",
+              "stack": "Backend",
+              "stackDesc": "Backend",
+              "image":"https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png",
+              "summary": ""
+           },
+           {
+              "_id": 9,
+              "certificate":"ECMA Script",
+              "certificateDesc": "ECMAScript is a scripting language specification on which JavaScript is based.",
+              "stack": "Backend",
+              "stackDesc": "Backend",
+              "image":"https://www.parthenonsoftware.com/collectedstatic/img/logos/es6.png",
+              "summary": ""
+           },
+           {
+              "_id": 10,
+              "certificate":"TypeScript",
+              "certificateDesc": "TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.",
+              "stack": "Backend",
+              "stackDesc": "Backend",
+              "image":"https://livecodestream.dev/post/what-why-and-how-of-typescript-for-javascript-developers/featured.jpg",
+              "summary": ""
+           },
+           {
+              "_id": 11,
+              "certificate":"NodeJS",
+              "certificateDesc": "Node.js is an open-source and cross-platform JavaScript runtime environment.",
+              "stack": "Backend",
+              "stackDesc": "Backend",
+              "image":"https://res.cloudinary.com/practicaldev/image/fetch/s--J_VYh9t9--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/d105ly7n2r4ob6zxu8ch.png",
+              "summary": ""
+           },
+           {
+              "_id": 12,
+              "certificate":"MongoDB",
+              "certificateDesc": "MongoDB is a source-available cross-platform document-oriented database program.",
+              "stack": "Backend",
+              "stackDesc": "Backend",
+              "image":"https://res.cloudinary.com/hevo/image/upload/f_auto,q_auto/v1644403814/hevo-learn/springboot_MongoDB_configuration_mongodb.jpg?_i=AA",
+              "summary": ""
+           }
+        ],
+        "DevOps": [
+           
+        ]
+     }
+}

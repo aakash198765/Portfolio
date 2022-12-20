@@ -60,6 +60,10 @@
   margin-left: 1rem;
 }
 
+.anticon-down {
+  display: none !important;
+}
+
 /* media query */
 @media only screen and (max-width: 600px) {
   .web_breadcrumb {

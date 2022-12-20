@@ -1,0 +1,95 @@
+.carousel-content-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #E3E6E9;
+    padding: 1rem 0rem 1rem 0rem;
+}
+
+.carousel-content-1:hover {
+    background-color: #cbcbcd;
+    cursor: pointer;
+}
+
+.quote-1 {
+    text-align: center;
+    font-size: 3rem;
+    line-height: revert;
+    font-family: emoji;
+    font-variant: ordinal;
+    font-weight: 500;
+    color: #a3a3a3;
+    display: block;
+    background-color: #cbcbcd;
+}
+
+.carousel-content-1-content {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: revert;
+    font-family: emoji;
+    font-variant: ordinal;
+    font-weight: 500;
+    color: #090909;
+    display: block;
+    padding: 0rem 5rem 12rem 5rem;
+    background-color: #cbcbcd ;
+}
+
+.profile-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: -8rem;
+}
+
+.profile {
+    width: 20rem;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9ebed;
+    padding: 2rem 1rem 2rem 1rem;
+    border-radius: 1rem;
+}
+
+.profile:hover {
+    background: #e0e0e1;
+    border: .1rem solid #e9ebed;
+}
+
+.profile-image {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    margin: 2rem 0rem 0rem 0rem;
+    font-family: sans-serif;
+    font-variant: ordinal;
+    font-weight: 500;
+    color: #8a8888;
+}
+
+.profile-designation {
+    font-size: 1rem;
+    line-height: inherit;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 10;
+    color: #8a8888;
+}
+
+.profile-rating {
+   
+}
+
+

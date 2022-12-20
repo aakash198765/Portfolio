@@ -1,126 +1,203 @@
-import React from 'react';
-import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
-    UploadOutlined,
-    UserOutlined,
-    VideoCameraOutlined,
-    MailTwoTone,
-    DatabaseTwoTone,
-  } from '@ant-design/icons';
-  import { Layout, Menu } from 'antd';
-  const { Header, Sider, Content } = Layout;
+import React, { lazy, Suspense } from 'react';
+import { } from '@ant-design/icons';
+import { Avatar, Card, Row, Col, Carousel } from 'antd';
+import CustomCarousel1 from '../../components/Carousel/carousel1';
+
+const { Meta } = Card;
+const CustomCard1 = lazy(() => import('../../components/Card/card1'));
+const CustomCard2 = lazy(() => import('../../components/Card/card2'));
+
+const carouselStyle = {
+    height: '160px',
+    color: '#fff',
+    lineHeight: '160px',
+    textAlign: 'center',
+    background: '#364d79',
+  };
+
 
 class ServiceContent extends React.Component {
     constructor(props){
         super(props)
     }
 
-    getMenuItems = (response) => {
-        if(!response || !response.Services || !Array.isArray(response.Services) || !response.Services.length){
+    parseServicesData = (services) => {
+        if(!services || !Array.isArray(services) || !services.length) {
             return [];
         }
-        const services = response.Services;
-        let items = [];
-        for(let index in services){
-            items.push(
-                {
-                    id: index,
-                    key: index,
-                    icon: "",
-                    label: services[index].title,
-                }
-            )
+        
+        return services.map((service) => {
+            return {
+                title: service.name,
+                content: service.desc,
+                image: service.image
+            }
+        })
+    }
+
+    parseProjectsData = (projects) => {
+        if(!projects || !Array.isArray(projects) || !projects.length) {
+            return [];
         }
-        return items;
+        
+        return projects.map((project) => {
+            return {
+                title: project.count,
+                content: project.status,
+            }
+        })
+    }
+
+    parseClientsData = (clients) => {
+        if(!clients || !Array.isArray(clients) || !clients.length) {
+            return [];
+        }
+
+        return clients.map((client) => {
+            return {
+                title: client.name,
+                subTitle1: client.designation,
+                subTitle2: client.company,
+                content: client.review,
+                rating: client.rating,
+                image: client.image,
+            }
+        })
     }
 
     render(){
-        return (
-            <div className='service_content_container'>{this.renderMainContent(this.props.state)}</div>
+        return(
+            <div className='service-content'>
+                {this.renderHeader()}
+                {this.renderGutter()}
+                {this.renderBody()}
+            </div>
         )
     }
 
-    renderMainContent = (state) => {
-        const { collapsed, response, activeService, width } = state;
+    renderGutter = () => {
         return (
-            <Layout className='service_content_container'>
-                <Sider 
-                    trigger={null} 
-                    collapsible 
-                    collapsed={collapsed} 
-                    width={width} 
-                    theme="light"
-                >
-                    <Menu
-                        theme="light"
-                        mode="inline"
-                        width={width} 
-                        defaultSelectedKeys={['1']}
-                        items={this.getMenuItems(response)}
-                        onClick={(event) => this.props.callback("activeService", event.key)}
-                    />
-                </Sider>
-                <Layout className="site-layout">
-                    <Header
-                        className="site-layout-background"
-                        style={{
-                            padding: 0,
-                            paddingLeft: 20,
-                            fontSize: "1.2rem",
-                        }}
-                    >
-                        {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-                            className: 'trigger',
-                            onClick: () => {
-                                this.props.callback("width", width === 200 ? 10 : 200)
-                                this.props.callback("collapsed", !collapsed)
-                            },
-                        })}
-                    </Header>
-                    <Content
-                        className="site-layout-background"
-                        style={{
-                            margin: '24px 16px',
-                            padding: 24,
-                            minHeight: 280,
-                        }}
-                    >
-                        {this.renderMenuItemContent(response, activeService)}
-                    </Content>
-                </Layout>
-            </Layout>
+            <div className='horizontal-gutter-1' />
         )
     }
 
-    renderMenuItemContent = (response, activeService) => {
-        if(!response || !response.Services || !response.Services[activeService]){
-            return <div>No Content</div>;
+    renderHeader = () => {
+        return (
+            <div className='service-content-header'>  
+                <div className="service-header-text">W h a t <span style={{marginLeft: '1rem', marginRight: '1rem'}}>I</span>D o</div>
+                <div className="service-header-subText">My Services</div>
+            </div>
+        )
+    }
+
+    renderBody = () => {
+        return (
+            <div className='service-content-body'>
+                {/*Title*/}
+                <div className="service-content-body-title">
+                    <text className='service-content-body-title-text'>WHAT I DO</text>
+                    <text className='service-content-body-title-subtext'></text>
+                </div>
+                {/*Title Bottom Border*/}
+                <div className='service-content-body-title-bottom-border-container'>
+                    <span className='service-content-body-title-bottom-border' />
+                </div>
+                {/*Services*/}
+                {this.renderServices()}
+                {/*Projects*/}
+                {this.renderProjects()}
+                {/*Clients Review*/}
+                {this.renderClients()}
+            </div>
+        )
+    }
+
+    renderServices = () => {
+        let { services } = this.props.state;
+        services = this.parseServicesData(services);
+
+        if(!services || !Array.isArray(services) || !services.length) {
+            return <div>No Services Available</div>
         }
-        const service = response.Services[activeService];
+
         return (
-            <>
-                <div 
-                    style={{
-                        fontSize: "2rem",
-                        fontFamily: 'sans-serif',
-                    }}
-                >
-                    {service && service.title}
+            <div className='services'>
+                <Row gutter={[16, 16]}>
+                    {
+                        services.map((service) => {
+                            return (
+                                <Col xs={24} sm={24} md={12} lg={8} xl={8} xxl={8}>
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <CustomCard1 image={service.image} title={service.title} content={service.content} />
+                                    </Suspense>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+            </div>
+        )  
+    }
+
+    renderProjects = () => {
+        let { projects } = this.props.state;
+        projects = this.parseProjectsData(projects);
+
+        if(!projects || !Array.isArray(projects) || !projects.length) {
+            return <div>No Projects Available</div>
+        }
+
+        return (
+            <div className='projects'>
+               <div className="service-content-body-title">
+                    <text className='service-content-body-title-text'>Projects</text>
+                    <text className='service-content-body-title-subtext'></text>
                 </div>
-                <div
-                     style={{
-                        fontSize: "1rem",
-                        fontFamily: 'sans-serif',
-                        paddingTop: '1rem',
-                        paddingBottom: '1rem'
-                    }}
-                >
-                    {service && service.content}
+                <div className='service-content-body-title-bottom-border-container'>
+                    <span className='service-content-body-title-bottom-border' />
                 </div>
-            </>
+
+                <Row gutter={[24, 24]}>
+                    {
+                        projects.map((project) => {
+                            return (
+                                <Col xs={24} sm={24} md={12} lg={8} xl={8} xxl={8}>
+                                    <Suspense fallback={<div>Loading...</div>}>
+                                        <CustomCard2 title={project.title} content={project.content} />
+                                    </Suspense>
+                                </Col>
+                            )
+                        })
+                    }
+                </Row>
+            </div>
         )
     }
+
+    renderClients = () => {
+        let { clients } = this.props.state;
+        clients = this.parseClientsData(clients);
+
+        if(!clients || !Array.isArray(clients) || !clients.length) {
+            return <div>No Testimonial Available</div>
+        }
+
+        return (
+            <div className='clients'>
+               <div className="service-content-body-title">
+                    <text className='service-content-body-title-text'>MY HAPPY CLIENTS</text>
+                    <text className='service-content-body-title-subtext'>who are extremely in love with the products</text>
+                </div>
+                <div className='service-content-body-title-bottom-border-container'>
+                    <span className='service-content-body-title-bottom-border' />
+                </div>
+
+                <CustomCarousel1 items={clients} />
+
+            </div>
+        )
+    }
+
 }
 
 export default ServiceContent;

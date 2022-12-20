@@ -1,0 +1,122 @@
+.custom-card {
+  width: 100%;
+  background:  linear-gradient(#FFFFFF, #FFFFFF 50%, #8887ff 50%, #cacaff);
+  background-size: 100% 200%;
+  transition: background 1s;
+}
+
+.custom-card:hover {
+  background-position: 100% 100%;
+}
+
+.custom-card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-card-image {
+    min-height: 10rem;
+    height: 10rem;
+    text-align: center;
+}
+
+.custom-card-image:hover {
+  background-color: #cacaff;
+  opacity: 0.6;
+}
+
+
+.custom-meta {
+  width: 100%;
+}
+
+.custom-card-title {
+  text-align: center;
+  font-feature-settings: "smcp", "c2sc";
+  font-variant: common-ligatures;
+  font-size: 1.2rem;
+  line-height: 5rem;
+  font-family: monospace;
+  overflow: overlay;
+}
+
+.custom-card-content {
+  text-align: center;
+  font-size: 1rem;
+  line-height: revert;
+  font-family: ui-monospace;
+  min-height: 7rem;
+  height: 7rem;
+}
+
+.custom-card-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0rem 2rem 0rem;
+}
+
+.custom-card-button-title {
+  text-align: center;
+  font-size: 1rem;
+  line-height: revert;
+  font-family: sans-serif;
+  font-variant: all-small-caps;
+  border-image: linear-gradient(#8887ff, #cacaff) 30;
+  border-bottom-width: .15rem;
+  border-bottom-style: solid;
+  cursor: pointer;
+}
+
+.custom-card-button-title:hover {
+  font-size: 1.1rem;
+  color: #dd3030;
+  border-image: linear-gradient(#dd3030, #ae6263aa) 30;
+  transform: translateY(-.5rem);
+  transition: 0.3s;
+}
+
+
+/* Custom Card 2 */
+
+.custom-card-2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 15rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    background: #e4e4e7;
+    border-width: .1rem;
+    border-color: #cacaff;
+    border-style: solid;
+}
+
+.custom-card-2:hover {
+    background: linear-gradient(240deg, #8887ff, #cacaff);
+    color: #FFFFFF;
+    transition: 0.3s;
+}
+
+.custom-card-2-title {
+    text-align: center;
+    font-size: 5rem;
+    line-height: revert;
+    font-family: -webkit-body;
+    font-variant: contextual;
+    font-weight: 500;
+    display: block;
+}
+
+.custom-card-2-content {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: revert;
+    font-family: emoji;
+    font-variant: ordinal;
+    font-weight: 500;
+    display: block;
+}

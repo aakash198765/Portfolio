@@ -7,7 +7,6 @@ import Sending from './send.json';
 import Sent from './sent.json';
 import Failed from './failed.json';
 const { TextArea } = Input;
-const { Option } = Select;
 
 class Content extends React.Component {
     constructor(props){
@@ -18,46 +17,43 @@ class Content extends React.Component {
         }
     }
 
-    render(){
-        return this.renderMainContent();
-    }
-
-    renderMainContent = () => {
+    render = () => {
         return (
             <div className='contact-content'>
-                {/*Header*/}
-                <div className='contact-content-header'>
-                    {this.renderHeader()}
-                </div> 
-                {/* Horizontal gutter */}
-                <div className='horizontal-gutter-1' />
-                {/*Body*/}
-                <div className='contact-content-body'>
-                    {this.renderBody()}
-                </div>
+                {this.renderHeader()}
+                {this.renderGutter()}
+                {this.renderBody()}
             </div>
+        )
+    }
+
+    renderGutter = () => {
+        return (
+            <div className='horizontal-gutter-1' />
         )
     }
 
     renderHeader = () => {
         return (
-            <>  
-                <div className="header-text">Get in touch!</div>
-                <div className="header-subText">Contact us for a quote, help to join the team.</div>
-            </>
+            <div className='contact-content-header'>  
+                <div className="contact-header-text">C o n t a c t <span style={{marginLeft: '1rem', marginRight: '.5rem'}}>M e</span></div>
+                <div className="contact-header-subText">Get In Touch!</div>
+            </div>
         )
     }
 
     renderBody = () => {
         return (
-            <Row>
-                <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
-                    <div className='body-mail'>{this.renderMail()}</div>
-                </Col>
-                <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
-                    <div className='body-form'>{this.renderForm()}</div>
-                </Col>
-            </Row>
+            <div className='contact-content-body'>
+                <Row>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+                        <div className='body-form'>{this.renderForm()}</div>
+                    </Col>
+                    <Col xs={24} sm={24} md={12} lg={12} xl={12} xxl={12}>
+                        <div className='body-mail'>{this.renderMail()}</div>
+                    </Col>
+                </Row>
+            </div>
         )
     }
 

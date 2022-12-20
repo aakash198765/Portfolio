@@ -80,7 +80,6 @@ class Content extends React.Component {
     }
 
     shouldUpdateData = () => {
-        debugger
         if(this.props.active !== this.active ){
             this.active = this.props.active;
             this.setData();

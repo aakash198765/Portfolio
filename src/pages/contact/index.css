@@ -4,7 +4,7 @@
 }
 
 .contact-content-header {
-    height: 15%;
+    height: 95%;
     width: 100%;
     margin: 0rem 0rem 0rem 0rem;
     padding: 0rem 0rem 0rem 0rem;
@@ -12,18 +12,20 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    background-color: #cacaff ;
 }
 
-.header-text {
-    font-family: auto;
-    font-size: xxx-large;
-    line-height: initial;
-}
-
-.header-subText {
-    font-family: sans-serif;
-    font-size: 1rem;
+.contact-header-text {
+    font-variant: all-small-caps;
+    font-size: 1.5rem;
     line-height: revert;
+}
+  
+.contact-header-subText {
+    font-family: unset;
+    font-size: 3rem;
+    line-height: revert;
+    font-variant: stacked-fractions;
 }
 
 .contact-content-body {

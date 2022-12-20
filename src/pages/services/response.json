@@ -1,19 +1,71 @@
 {
     "Services": [
         {
-            "icon": "",
-            "title": "Web Service",
-            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
+            "name": "UI/UX Design",
+            "desc": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB.",
+            "image": "https://miro.medium.com/max/1056/1*UHN-45J_1Qrs-ke_1dAPhQ.png"
         },
         {
-            "icon": "",
-            "title": "Mongo Service",
-            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
-            },
-            {
-            "icon": "",
-            "title": "Mail Service",
-            "content": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB."
-            }
+            "name": "Web Frontend Development",
+            "desc": "",
+            "image": "https://img.freepik.com/premium-vector/woman-programmer-working-new-project-women-work-with-code-programming-laptop_530733-2367.jpg?w=2000"
+        },
+        {
+            "name": "Mobile App Frontend Development",
+            "desc": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB. MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB.",
+            "image": "https://static.vecteezy.com/system/resources/previews/002/136/493/non_2x/creating-an-application-design-concept-people-and-content-text-place-ui-ux-design-illustration-vector.jpg"
+        
+        },
+        {
+            "name": "Backend Development",
+            "desc": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB.",
+            "image": "https://thumbs.dreamstime.com/b/back-end-development-concept-vector-illustration-programming-coding-website-webpage-optimization-software-process-backend-app-155693192.jpg"
+        
+        },
+        {
+            "name": "Web Hosting",
+            "desc": "MongoDB runs as a standard program. You can start MongoDB from a command line by issuing the mongod command and specifying options. For a list of options, see the mongod reference. MongoDB can also run as a Windows service. For details, see Start MongoDB Community Edition as a Windows Service. To install MongoDB, see Install MongoDB.",
+            "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Comic_image_missing.svg/1264px-Comic_image_missing.svg.png"
+        }
+    ],
+    "Projects": [
+        {
+            "status": "Done Projects",
+            "count": 5
+        },
+        {
+            "status": "Ongoing Projects",
+            "count": 2
+        },
+        {
+            "status": "Clients",
+            "count": 5
+        }
+    ],
+    "Clients": [
+        {
+            "name": "Eric Clark",
+            "designation": "Product Manager",
+            "company": "Google",
+            "review": "Tech Exactly delivered quality work on time and at a reasonable cost, satisfying the client due to the excellent value for the money. The platform is now operating, with 125 players and 27 clubs already registered. The team was communicative and offered great project management.",
+            "rating": 4,
+            "image": "https://st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg"
+        },
+        {
+            "name": "John Henry",
+            "designation": "Product Manager",
+            "company": "Facebook",
+            "review": "Tech Exactly delivered quality work on time and at a reasonable cost, satisfying the client due to the excellent value for the money. The platform is now operating, with 125 players and 27 clubs already registered. The team was communicative and offered great project management.",
+            "rating": 3.9,
+            "image": "https://thumbs.dreamstime.com/b/businessman-icon-vector-male-avatar-profile-image-profile-businessman-icon-vector-male-avatar-profile-image-182095609.jpg"
+        },
+        {
+            "name": "Chad Hawkins",
+            "designation": "Technical Lead",
+            "company": "Microsoft",
+            "review": "Tech Exactly delivered quality work on time and at a reasonable cost, satisfying the client due to the excellent value for the money. The platform is now operating, with 125 players and 27 clubs already registered. The team was communicative and offered great project management.",
+            "rating": 5,
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTa0mY04NeynM9jLwuxyuvaqyjfwHeBJkPsEwxUO-junn3ptTn8MyFPeTVpa5sppoAu758&usqp=CAU"
+        }
     ]
 }

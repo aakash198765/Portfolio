@@ -22,46 +22,15 @@ const breadcrumbItems = [
             {
               path: '/about?mode=experience',
               breadcrumbName: 'Experience',
-            },
-            // {
-            //   path: '/about?mode=goal',
-            //   breadcrumbName: 'Goals',
-            // },
-            // {
-            //   path: '/about?mode=interest',
-            //   breadcrumbName: 'Interest',
-            // },
-            // {
-            //   path: '/about?mode=hobby',
-            //   breadcrumbName: 'Hobby',
-            // },
+            }
       ],
-  },
-    {
-        breadcrumbName: "Works",
-        breadcrumbIcon: "",
-        path: "/work",
-        children: [
-            {
-              path: '/work?mode=personal',
-              breadcrumbName: 'Personal',
-            },
-            {
-              path: '/work?mode=company',
-              breadcrumbName: 'Company',
-            },
-            {
-              path: '/work?mode=community',
-              breadcrumbName: 'Community',
-            },
-          ],
     },
-    // {
-    //     breadcrumbName: "Portfolio",
-    //     breadcrumbIcon: "",
-    //     path: "/portfolio",
-    //     children: [],
-    // },
+    {
+        breadcrumbName: "Certification",
+        breadcrumbIcon: "",
+        path: "/certification",
+        children: [],
+    },
     {
         breadcrumbName: "Services",
         breadcrumbIcon: "",
@@ -73,7 +42,7 @@ const breadcrumbItems = [
       breadcrumbIcon: "",
       path: "/contact",
       children: [],
-  }
+    }
 ];
 
 class NavBar extends React.Component {

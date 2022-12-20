@@ -11,18 +11,19 @@ class Service extends React.Component {
 
         this.state = {
             active: "",
-            width: 200,
-            collapsed: false,
-            activeService: 0,
-            response: {},
+            services: [],
+            projects: [],
+            clients: [],
         }
     }
 
     componentDidMount() {
-        const location = window.location;
+        // const location = window.location;
         this.setState({
-            active: `${location.pathname}${location.search}`,
-            response: response,
+            //active: `${location.pathname}${location.search}`,
+            services: response && response.Services,
+            projects: response && response.Projects,
+            clients: response && response.Clients,
         })
     }
     
@@ -33,7 +34,8 @@ class Service extends React.Component {
         this.setState({
           [id]: value
         })
-      }
+    }
+
 
     render(){
         const { active } = this.state;
@@ -41,7 +43,7 @@ class Service extends React.Component {
         return (
             <div className='page_layout'>
                 <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
-                <div className='page_content'><ServiceContent state={this.state} callback={this.callback} /></div>
+                <div className='page_content'><ServiceContent state={this.state} /></div>
             </div>
         )
     }

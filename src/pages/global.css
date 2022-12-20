@@ -11,11 +11,11 @@
 
 @media only screen and (max-width: 600px) {
     .page_navbar {
-        padding-top: 0rem;
-        padding-bottom: 0rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         padding-left: 0rem;
         padding-right: 0rem;
-        height: 15%;
+        height: 10%;
         background-color: #e3e6e9;
     }
     
@@ -33,20 +33,20 @@
   /* Small devices (portrait tablets and large phones, 600px and up) */
   @media only screen and (min-width: 600px) {
     .page_navbar {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 15%;
+        height: 10%;
         background-color: #e3e6e9;
     }
     
     .page_content {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 85%;
+        height: 90%;
         background-color: #e3e6e9;
     }
    
@@ -55,19 +55,20 @@
   /* Medium devices (landscape tablets, 768px and up) */
   @media only screen and (min-width: 768px) {
     .page_navbar {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         padding-left: 3rem;
         padding-right: 3rem;
+        height: 10%;
         background-color: #e3e6e9;
     }
     
     .page_content {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 85%;
+        height: 90%;
         background-color: #e3e6e9;
     }
    
@@ -76,20 +77,20 @@
   /* Large devices (laptops/desktops, 992px and up) */
   @media only screen and (min-width: 992px) {
     .page_navbar {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 15%;
+        height: 10%;
         background-color: #e3e6e9;
     }
     
     .page_content {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 85%;
+        height: 90%;
         background-color: #e3e6e9;
     }
    
@@ -98,20 +99,20 @@
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) {
     .page_navbar {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 15%;
+        height: 10%;
         background-color: #e3e6e9;
     }
     
     .page_content {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+        padding-top: 0rem;
+        padding-bottom: 0rem;
         padding-left: 3rem;
         padding-right: 3rem;
-        height: 85%;
+        height: 90%;
         background-color: #e3e6e9;
     }
     
