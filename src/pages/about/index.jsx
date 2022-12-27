@@ -3,24 +3,33 @@ import Content from './content';
 import NavBar from '../../components/navbar';
 import './index.css';
 import '../global.css';
+import response from './response.json';
 
 class About extends React.Component {
     constructor(props){
         super(props)
 
         this.state = {
-            active: ""
+            pathname: "",
+            active: "",
+            data: []
+
         }
 
         this.searchParams = new URLSearchParams(window.location.search)
     }
 
     componentDidMount() {
-        const mode = this.getParams("mode", window.location.search);
+        this.makeApiCall()
+    }
+
+    makeApiCall = () => {
+        const active = this.getParams("mode", window.location.search);
         this.setState({
-            active: mode,
+            active: active,
+            pathname: window.location.pathname
         })
-    } 
+    }
 
     getParams = (param, url) => {
         let params = url ? url.split("?") : "";
@@ -37,17 +46,17 @@ class About extends React.Component {
         if(!id || !id.length){
             return ;
         }
-        const mode = this.getParams("mode", value);
+        const active = this.getParams("mode", value);
         this.setState({
-          active: mode
+          active: active
         })
-      }
+    }
 
     render(){
-        const { active } = this.state;
+        const { active, pathname } = this.state;
         return (
             <div className='page_layout'>
-                <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
+                <div className='page_navbar'><NavBar active={active} pathname={pathname} callback={this.callback} /></div>
                 <div className='page_content'><Content active={active} /></div>
             </div>
         )

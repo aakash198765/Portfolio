@@ -9,14 +9,20 @@ class Portfolio extends React.Component {
         super(props)
 
         this.state = {
+            pathname: "",
             active: ""
         }
     }
 
     componentDidMount() {
-        const location = window.location;
+        this.makeApiCall()
+    }
+
+    makeApiCall = () => {
+        const active = this.getParams("", window.location.search);
         this.setState({
-            active: `${location.pathname}${location.search}`,
+            active: active,
+            pathname: window.location.pathname,
         })
     }
 
@@ -24,17 +30,29 @@ class Portfolio extends React.Component {
         if(!id || !id.length){
             return ;
         }
+        const active = this.getParams("mode", value);
         this.setState({
-          [id]: value
+          active: active,
         })
-      }
+    }
+
+    getParams = (param, url) => {
+        let params = url ? url.split("?") : "";
+        params = params && params[1] ? params[1].split("&") : [];
+        let obj = {};
+        for(let i in params) {
+            let param = params[i].split("=");
+            obj[param[0]] = param[1];
+        }
+        return obj[param] || "";
+    }
 
     render(){
-        const { active } = this.state;
+        const { active, pathname } = this.state;
 
         return (
             <div className='page_layout'>
-                <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
+                <div className='page_navbar'><NavBar active={active} pathname={pathname} callback={this.callback} /></div>
                 <div className='page_content'><Content /></div>
             </div>
         )

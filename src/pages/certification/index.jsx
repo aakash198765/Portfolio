@@ -120,6 +120,7 @@ class Service extends React.Component {
         super(props)
 
         this.state = {
+            pathname: "",
             active: "",
             stacks: [],
             certificates: [],
@@ -129,26 +130,32 @@ class Service extends React.Component {
     }
 
     componentDidMount() {
-        // const location = window.location;
-        // this.setState({
-        //     active: `${location.pathname}${location.search}`,
-        //     response: response,
-        // })
-
         this.makeApiCall();
-
         this.handleScroll()
     }
 
     makeApiCall = () => {
+        const active = this.getParams("", window.location.search);
         this.setState({
+            active: active,
+            pathname: window.location.pathname,
             stacks: response && response.stacks,
             certificates: response && response.certificates,
             activeLink: links && links[0] && links[0].category,
         })
     }
 
-   
+    getParams = (param, url) => {
+        let params = url ? url.split("?") : "";
+        params = params && params[1] ? params[1].split("&") : [];
+        let obj = {};
+        for(let i in params) {
+            let param = params[i].split("=");
+            obj[param[0]] = param[1];
+        }
+        return obj[param] || "";
+    }
+
     handleScroll = () => {
         let scrollTop = this.pageContentRef && this.pageContentRef.current && this.pageContentRef.current.scrollTop;
         if(!scrollTop ||  scrollTop < 400) {
@@ -168,8 +175,9 @@ class Service extends React.Component {
         if(!id || !id.length){
             return ;
         }
+        const active = this.getParams("mode", value);
         this.setState({
-          [id]: value
+          active: active,
         })
     }
 
@@ -181,24 +189,19 @@ class Service extends React.Component {
     }
 
     render(){
-        const { active } = this.state;
+        const { active, pathname } = this.state;
 
         return (
             <div className='page_layout'>
-                <div className='page_navbar'><NavBar active={active} callback={this.callback} /></div>
+                <div className='page_navbar'><NavBar active={active} pathname={pathname} callback={this.callback} /></div>
                 <div className='page_content' ref={this.pageContentRef} onScroll={() => this.handleScroll()}>
-                    <Content 
-                        state={this.state} 
-                        callback={this.callback} 
-                        updateActiveLink={this.updateActiveLink}
-                    />
+                    <Content state={this.state} callback={this.callback} updateActiveLink={this.updateActiveLink} />
                 </div>
                 {this.renderScrollToTopAndBottom()}
             </div>
         )
     }
     
-
     renderScrollToTopAndBottom = () => {
         return (
             <span 

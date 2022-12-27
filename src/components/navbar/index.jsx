@@ -75,6 +75,7 @@ class NavBar extends React.Component {
               state={this.state}
               updateState={this.updateState}
               active={this.props.active}
+              pathname={this.props.pathname}
               callback={this.props.callback}
             />
         )

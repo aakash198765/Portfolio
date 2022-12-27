@@ -1,0 +1,18 @@
+{
+        "Title": "Hi",
+        "SubTitle1" : "I'm",
+        "roles": ["Designer", "Coder", "Developer"],
+        "SubTitle2": "Aakash K. Saha",
+        "Content": "working as fullstack developer in one of the fastest growing startup company, Param Network. Being in the startup company, received really good opportunities to collaborate with team and clients, and work on and lead the project.",
+        "Button1": "Hire Me",
+        "Button2": "Download CV",
+        "images": [
+                "https://cdni.iconscout.com/illustration/premium/thumb/web-development-4439345-3726916.png", 
+                "https://cdni.iconscout.com/illustration/premium/thumb/coding-programming-5380222-4498687.png",
+                "https://cdni.iconscout.com/illustration/premium/thumb/man-working-on-website-development-5691619-4759501.png",
+                "https://cdni.iconscout.com/illustration/premium/thumb/full-stack-javascript-developer-at-office-4190668-3491172.png",
+                "https://cdni.iconscout.com/illustration/premium/thumb/htmlk-developer-5734069-4794954.png"
+        ],
+        "Medias": [{"Title": "LinkedIn", "Link": ""}, {"Title": "Instagram",  "Link": ""},  {"Title": "Facebook", "Link": ""},  {"Title": "WhatsApp", "Link": ""},  {"Title": "Gmail", "Link": ""}],
+        "Quote": "Transform Your Thoughts In The Ideas And Ideas In The Products."
+}

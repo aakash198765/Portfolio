@@ -1,0 +1,46 @@
+{
+    "education": [
+        {
+            "image": "https://ip.cambridgeschool.edu.in/wp-content/uploads/sites/6/2022/07/Book-Class-10.png",
+            "class": "X",
+            "school": "D.A.V Public School",
+            "startDate": 1396594317000,
+            "endDate": 1428130317000,
+            "current": false,
+            "content": "ReactJS tutorial provides basic and advanced concepts of ReactJS. Currently, ReactJS is one of the most popular JavaScript front-end libraries which has a strong foundation and a large community.",
+            "certificate": "https://qph.cf2.quoracdn.net/main-qimg-87f2d8871f69b1289d72412b7e253d2c-lq"
+        },
+        {
+            "image": "https://www.rkvityclasses.com/images/class-12.jpg",
+            "class": "XII",
+            "school": "St. Francis de Sales PU College",
+            "startDate": 1435992717000,
+            "endDate": 1499151117000,
+            "current": false,
+            "content": "ReactJS tutorial provides basic and advanced concepts of ReactJS. Currently, ReactJS is one of the most popular JavaScript front-end libraries which has a strong foundation and a large community.",
+            "certificate": "https://i.pinimg.com/736x/5b/6e/1a/5b6e1a3a74ff1a79e825bf277c6c0a11.jpg"
+        },
+        {
+            "image": "https://img.freepik.com/premium-vector/b-tech-lettermark-logo_48832-810.jpg?w=2000",
+            "class": "B.Tech",
+            "school": "FET, Jain University",
+            "startDate": 1501829517000,
+            "endDate": 1623307917000,
+            "current": false,
+            "content": "ReactJS tutorial provides basic and advanced concepts of ReactJS. Currently, ReactJS is one of the most popular JavaScript front-end libraries which has a strong foundation and a large community.",
+            "certificate": "https://degree.betinstitutions.org/wp-content/uploads/2019/03/Narrative-Review-Application1-800x577.jpeg"
+        }
+    ],
+    "experience": [
+        {
+            "image": "https://images.squarespace-cdn.com/content/v1/5ddd54304e0fdd753b530d54/1577732295045-ULJ60FYP0LTYP8U7P9XH/param.png",
+            "profile": "Application Developer",
+            "company": "Param Network", 
+            "startDate": 1621839117000,
+            "endDate": 0,
+            "current": true,
+            "content": "ReactJS tutorial provides basic and advanced concepts of ReactJS. Currently, ReactJS is one of the most popular JavaScript front-end libraries which has a strong foundation and a large community.",
+            "certificate": "https://qph.cf2.quoracdn.net/main-qimg-87f2d8871f69b1289d72412b7e253d2c-lq"
+        }
+    ]
+}

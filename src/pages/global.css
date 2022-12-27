@@ -27,6 +27,15 @@
         height: 85%;
         background-color: #e3e6e9;
     }
+
+    .contactFormAlignment {
+        top: -5rem;
+        left: 0rem;
+    }
+
+    .addressContainerAlignment {
+        padding: 0rem 10% 0rem 10%;
+    }
    
   }
   
@@ -48,6 +57,15 @@
         padding-right: 3rem;
         height: 90%;
         background-color: #e3e6e9;
+    }
+
+    .contactFormAlignment {
+        top: -5rem;
+        left: 0rem;
+    }
+
+    .addressContainerAlignment {
+        padding: 0rem 2rem 0rem 2rem;
     }
    
   }
@@ -71,6 +89,15 @@
         height: 90%;
         background-color: #e3e6e9;
     }
+
+    .contactFormAlignment {
+        top: -5rem;
+        left: 0rem;
+    }
+
+    .addressContainerAlignment {
+        padding: 0rem 5rem 0rem 5rem;
+    }
    
   } 
   
@@ -92,6 +119,15 @@
         padding-right: 3rem;
         height: 90%;
         background-color: #e3e6e9;
+    }
+
+    .contactFormAlignment {
+        top: -5rem;
+        left: 0rem;
+    }
+
+    .addressContainerAlignment {
+        padding: 0rem 2rem 0rem 2rem;
     }
    
   } 
@@ -116,5 +152,14 @@
         background-color: #e3e6e9;
     }
     
+    .contactFormAlignment {
+        top: -5rem;
+        left: 5rem;
+    }
+
+    .addressContainerAlignment {
+        padding: 0rem 0rem 0rem 10rem;
+    }
+
   }
   

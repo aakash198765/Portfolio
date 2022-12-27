@@ -26,7 +26,7 @@ class Content extends React.Component {
                     {
                         key: childIndex,
                         label: (
-                            <Link onClick={() => this.props.callback("active", child.path)} to={child.path}><text className="custom_navbar_item_text" style={{color: this.props.active === child.path ? "#f54c18" : "#343a40" }}>{child.breadcrumbName}</text></Link>
+                            <Link onClick={() => this.props.callback("active", child.path)} to={child.path}><text className="custom_navbar_item_text" style={{color: `${this.props.pathname}?mode=${this.props.active}` === child.path ? "#f54c18" : "#343a40" }}>{child.breadcrumbName}</text></Link>
                         ),
                       }
                 )
@@ -47,13 +47,14 @@ class Content extends React.Component {
             if(breadcrumbItem && breadcrumbItem.children && Array.isArray(breadcrumbItem.children) && breadcrumbItem.children.length){
                 navbar.push(
                     <Breadcrumb.Item className="custom_navbar_item" key={key} overlay={this.renderBreadcrumbChildren(breadcrumbItem.children)} >
-                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }}>{breadcrumbItem.breadcrumbName}</a></Link>
+                        {/* <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.pathname.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }}>{breadcrumbItem.breadcrumbName}</a></Link> */}
+                        <span className="custom_navbar_item_text" style={{color: this.props.pathname.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }}>{breadcrumbItem.breadcrumbName}</span>
                     </Breadcrumb.Item>
                 )
             } else {
                 navbar.push(
                     <Breadcrumb.Item className="custom_navbar_item" key={key} >
-                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.active.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
+                        <Link to={breadcrumbItem.path}><a className="custom_navbar_item_text" style={{color: this.props.pathname.includes(breadcrumbItem.path) ? "#f54c18" : "#343a40" }} >{breadcrumbItem.breadcrumbName}</a></Link>
                     </Breadcrumb.Item>
                 )
             }
@@ -75,9 +76,10 @@ class Content extends React.Component {
 
     getItem = (label, key, icon, children, type) => {
         if(children && children.length){
+            debugger
             return { key, icon, children, label:  <Link to={key}><text className="custom_navbar_item_text" style={{color: this.props.active.includes(key) ? "#f54c18" : "#343a40" }}>{label}</text></Link>, type }
         } else {
-            return { key, icon, label:  <Link to={key}><text className="custom_navbar_item_text" style={{color: this.props.active.includes(key) ? "#f54c18" : "#343a40" }}>{label}</text></Link>, type }
+            return { key, icon, label:  <Link to={key}><text className="custom_navbar_item_text" style={{color: this.props.pathname.includes(key) ? "#f54c18" : "#343a40" }}>{label}</text></Link>, type }
         }
     }
 
